@@ -1,10 +1,22 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const mongoose = requre("mongoose");
+const mongoose = require("mongoose");
+
+const register = require("./routes/register");
 
 const app = express();
 
-app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "static")));
+
+// MONGOOSE
+mongoose.connect('mongodb://localhost:27017/shortenURL');
+
+// End points
+app.use("/api/register", register);
+
+app.listen(80, () => {
+    console.log("port 80");
+});
