@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
             try {
                 const response = await User.create({ username: username, password: hashPwd });
                 // console.log(response);
-                res.json({ status: "created" });
+                res.status(201).json({ status: "created" });
             } catch (error) {
                 console.log(JSON.stringify(error));
                 res.json({ error: "something went wrong" });
