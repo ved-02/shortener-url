@@ -8,7 +8,7 @@ export default function Dashboard(props) {
     const [shortURL, setShortURL] = useState("");
     const [url, setUrl] = useState([]);
     const getURLs = async (token) => {
-        const response = await fetch("http://smolurl.herokuapp.com/api/url", {
+        const response = await fetch("/api/url", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ export default function Dashboard(props) {
     }
     const addURL = async()=>{
         const token = localStorage.getItem('token');
-        const response = await fetch("http://smolurl.herokuapp.com/api/url/add", {
+        const response = await fetch("/api/url/add", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
