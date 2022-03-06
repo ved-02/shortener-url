@@ -8,7 +8,7 @@ export default function Dashboard(props) {
     const [shortURL, setShortURL] = useState("");
     const [url, setUrl] = useState([]);
     const getURLs = async (token) => {
-        const response = await fetch("http://localhost/api/url", {
+        const response = await fetch("http://smolurl.herokuapp.com/api/url", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ export default function Dashboard(props) {
     }
     const addURL = async()=>{
         const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost/api/url/add", {
+        const response = await fetch("http://smolurl.herokuapp.com/api/url/add", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ export default function Dashboard(props) {
                     {
                         url.map((url) => {
                             return (<tr key={url.shortURL}>
-                                <th><a href={`http://localhost/${url.shortURL}`}>{`http://localhost/${url.shortURL}`}</a></th>
+                                <th><a href={`http://smolurl.herokuapp.com/${url.shortURL}`}>{`http://smolurl.herokuapp.com/${url.shortURL}`}</a></th>
                                 <th>{url.count}</th>
                                 <th>{url.longURL}</th>
                             </tr>)

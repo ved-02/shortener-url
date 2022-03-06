@@ -27,7 +27,7 @@ export default function Root() {
                     </thead>
                     <tbody>
                         <tr>
-                            <th><a href={`http://localhost/ved`}>http://localhost/ved</a></th>
+                            <th><a href={`http://smolurl.herokuapp.com/ved`}>http://smolurl.herokuapp.com/ved</a></th>
                             <th>https://www.linkedin.com/in/ved-prakash-t-40a421200/</th>
                         </tr>
                     </tbody>
