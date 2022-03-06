@@ -6,8 +6,8 @@ const URL = require("../model/url");
 
 
 router.use(auth);
-router.get("/", (req, res) => {
-    const token = req.body.token;
+router.post("/", (req, res) => {
+    const {token} = req.body;
     var decoded;
     try {
         decoded = jwt.verify(token, process.env.TOKEN_KEY);
@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
             res.json({ urls });
     })
 });
-router.post("/", async (req, res) => {
+router.post("/add", async (req, res) => {
     const longURL = req.body.longURL;
     const shortURL = req.body.shortURL;
     const token = req.body.token;

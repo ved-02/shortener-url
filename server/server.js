@@ -11,8 +11,13 @@ const url = require("./routes/url");
 
 const app = express();
 
+// NOT IN PRODUCTION
+const cors = require("cors");
+app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "static")));
+app.use(express.json());
 
 // MONGOOSE
 mongoose.connect('mongodb://localhost:27017/shortenURL');
