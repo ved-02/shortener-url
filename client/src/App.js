@@ -24,7 +24,7 @@ function App() {
   }
   return (
     <div className="component">
-      <div className="component" style={{height: "88vh"}}>
+      <div className="component" style={{ height: "88vh" }}>
         <Router >
           <Navbar />
           <Alert alert={alert} />
