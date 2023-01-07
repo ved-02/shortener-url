@@ -13,6 +13,7 @@ const login = require("./routes/login");
 const url = require("./routes/url");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -53,6 +54,6 @@ if (process.env.NODE_ENV == "production") {
     })
 }
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     console.log(`port ${process.env.PORT}`);
 });
