@@ -1,5 +1,5 @@
 # shortener-url
-https://smolurl.herokuapp.com/
+https://shorten-url-wvuk.onrender.com/
 <br/>
 Username: ved <br/>
 Password: qwerty
